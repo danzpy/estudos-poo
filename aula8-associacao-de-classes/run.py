@@ -11,17 +11,17 @@ class Interruptor:
 
     def acender(self) -> None:
         if self.status:
-            self.__imprime_estado(f'A luz do {self.comodo} já está acesa.')
+            self.__imprime_estado(f'A luz do(a) {self.comodo} já está acesa.')
         else:
             self.status = True
-            self.__imprime_estado(f'A luz do {self.comodo} foi acesa.')
+            self.__imprime_estado(f'A luz do(a) {self.comodo} foi acesa.')
 
     def apagar(self) -> None:
         if not self.status:
-            self.__imprime_estado(f'A luz do {self.comodo} já está apagada.')
+            self.__imprime_estado(f'A luz do(a) {self.comodo} já está apagada.')
         else:
             self.status = False
-            self.__imprime_estado(f'A luz do {self.comodo} foi apagada.')
+            self.__imprime_estado(f'A luz do(a) {self.comodo} foi apagada.')
 
 
 class Pessoa:
@@ -37,8 +37,11 @@ class Pessoa:
     
 pessoa1 = Pessoa('Daniel')
 interruptor1 = Interruptor('Quarto')
+interruptor2 = Interruptor('Sala')
 
 pessoa1.acender_luzes(interruptor1)
 pessoa1.apagar_luzes(interruptor1)
 pessoa1.acender_luzes(interruptor1)
 pessoa1.acender_luzes(interruptor1)
+pessoa1.apagar_luzes(interruptor2)
+pessoa1.acender_luzes(interruptor2)
