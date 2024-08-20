@@ -1,34 +1,27 @@
 class Interruptor:
 
-    status = None
+    status = False
 
     def __init__(self, comodo: str) -> None:
         self.comodo = comodo
 
-    def verifica_status(self):
-        if self.status:
-            return True
-
-    def imprime_status(self):
-        if self.status:
-            print(f'Luz do {self.comodo} foi acesa.')
-        else:
-            print(f'Luz do {self.comodo} foi apagada.')
+    def __imprime_estado(self, estado):
+        self.estado = estado
+        print(self.estado)
 
     def acender(self) -> None:
-        if self.verifica_status():
-            print(f'A luz do {self.comodo} já está acesa.')
+        if self.status:
+            self.__imprime_estado(f'A luz do {self.comodo} já está acesa.')
         else:
             self.status = True
-            self.imprime_status()
+            self.__imprime_estado(f'A luz do {self.comodo} foi acesa.')
 
     def apagar(self) -> None:
-        if not self.verifica_status():
-            self.imprime_status()
-            print(f'A luz do {self.comodo} já está apagada.')
+        if not self.status:
+            self.__imprime_estado(f'A luz do {self.comodo} já está apagada.')
         else:
             self.status = False
-            self.imprime_status()
+            self.__imprime_estado(f'A luz do {self.comodo} foi apagada.')
 
 
 class Pessoa:
