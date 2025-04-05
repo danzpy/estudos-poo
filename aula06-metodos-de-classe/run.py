@@ -11,15 +11,15 @@ class Carro:
         print(self.numero_de_rodas)
 
     def alterar_variavel_classe(self, valor):
-        self.numero_de_rodas = valor
+        self.numero_de_rodas = valor # Quando o valor é atualizado com o "self"
+                                     # Essa atualização será apenas para a instância atual.
 
 carro1 = Carro("Toyota", "Corolla")
 carro2 = Carro("Honda", "Civic")
 
-# O valor da variável de classe só será alterada para essa instância.
+# O valor da variável de classe só será alterada para essa instância (carro1)
 carro1.alterar_variavel_classe(3)
-carro1.print_variavel_classe()
 
-carro2.print_variavel_classe()
-
-print(Carro.numero_de_rodas)
+carro1.print_variavel_classe() # Output: 3
+carro2.print_variavel_classe() # Output: 4
+print(Carro.numero_de_rodas)   # Output: 4

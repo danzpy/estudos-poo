@@ -13,22 +13,26 @@ class Carro:
 
     @classmethod # Utilizando esse decorador, o valor será atualizado para a classe e todas suas instâncias.
     def alterar_variavel_classe(cls, valor):
-        cls.numero_de_rodas = valor
+        cls.numero_de_rodas = valor #Semelhante a: Carro.numero_de_rodas = valor
+
 
 carro1 = Carro("Toyota", "Corolla")
 carro2 = Carro("Honda", "Civic")
 
 print(f'Variável de classe acessada pela classe (antes da alteração) ->')
-print(Carro.numero_de_rodas)
+print(Carro.numero_de_rodas) # Output: 4
 
 print(f'\nVariável de classe acessada pela instância "carro2" (antes da alteração) ->')
-carro2.print_variavel_classe()
+carro2.print_variavel_classe() # Output: 4
 
-# O valor da variável de classe só será alterada para essa instância.
+# O valor da variável de classe foi alterada para todas as instâncias / classes.
 carro1.alterar_variavel_classe(3)
 
+print(f'\nVariável de classe acessada pela instância "carro2" (depois da alteração) ->')
+carro2.print_variavel_classe() # Output: 3
+
 print(f'\nVariável de classe acessada pela instância "carro1" (depois da alteração) ->')
-carro1.print_variavel_classe()
+carro1.print_variavel_classe() # Output: 3
 
 print(f'\nVariável de classe acessada pela classe (depois da alteração) ->')
-print(Carro.numero_de_rodas)
+print(Carro.numero_de_rodas) # Output: 3
