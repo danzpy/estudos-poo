@@ -6,6 +6,7 @@ class MinhaClasse:
         self.atributo1 = 'Este é meu primeiro atributo'
         self.atributo2 = 'Este é o segundo atributo'
         self.atributo3 = 2 + info
+        print('Este print será executado primeiro pois o método construtor é executado ao instanciar a classe.')
 
     def metodo_1(self):
         print("Essa é a ação 1.")
