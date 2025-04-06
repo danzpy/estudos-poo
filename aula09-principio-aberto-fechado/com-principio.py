@@ -1,4 +1,4 @@
-# Nesse caso, poderiam ser adicionados quantos métodos fossem necessários sem modificar a classe.
+# Nesse caso, poderiam ser adicionados quantas formas de pagamento fossem necessários sem modificar a classe.
 
 class Metodo:
 

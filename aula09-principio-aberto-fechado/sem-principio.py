@@ -1,4 +1,4 @@
-# Violando o principio, precisaria modificar a classe toda vez que um novo método fosse adicionado à logica.
+# Violando o principio, precisaria modificar a classe toda vez que uma nova forma de pagamento fosse adicionada à logica.
 # Isso deixaria o código aberto para modificação.
 
 class Pagamento:
@@ -7,7 +7,7 @@ class Pagamento:
             print(f"Processando pagamento de {valor} com cartão de crédito.")
         elif metodo == 'paypal':
             print(f"Processando pagamento de {valor} com PayPal.")
-        elif metodo == 'boleto':
+        else:
             print(f"Processando pagamento de {valor} com Boleto.")
 
 
