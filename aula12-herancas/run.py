@@ -8,7 +8,8 @@ atributos da classe superior.
 
 class Felino:
     def __init__(self, nome: str) -> None:
-        self.nome = nome
+        self.nome = nome # Quando o nome é solicitado na classe mãe, mas não instanciado, esse atributo poderá ser
+                         # atribuído na classe filha, utilizando "super()"
 
     def miar(self) -> None:
         print(f'{self.nome} está miando..')
@@ -18,7 +19,8 @@ class Felino:
 
 class Gato(Felino):
     def __init__(self, nome: str, cor) -> None:
-        super().__init__(nome)
+        super().__init__(nome) # Dessa maneira, não preciso instanciar a classe "Felino". Já inserindo o nome
+                               # nessa classe (Gato)
         self.cor = cor
 
 class Leao(Felino):
@@ -26,7 +28,7 @@ class Leao(Felino):
         super().__init__(nome) # Refere-se ao construtor da classe superior (Felino)
         self.cor = cor
 
-gato1 = Gato('Maria', 'cinza')
+gato1 = Gato('Maria', 'cinza') # Nome proveniente da classe mãe, cor proveniente da classe filho.
 gato2 = Gato('João', 'branco')
 leao1 = Leao('Jorge', 'amarelo')
 

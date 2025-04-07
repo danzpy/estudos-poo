@@ -6,6 +6,8 @@ class ConectorBancoDeDados:
     def conectar(self) -> None:
         self.connection = True
 
+        print('Banco de dados conectado com sucesso..')
+
 
 class RepositorioDeBanco:
 
@@ -31,10 +33,10 @@ class RegraDeNegocio:
             print(f'A soma dos dados é: {sum(dados.values())}')
 
 conn = ConectorBancoDeDados()
+conn.conectar()
+
 repositorio = RepositorioDeBanco(conn)
 regra = RegraDeNegocio(repositorio)
-
-conn.conectar()
 
 print(repositorio.busca_dados())
 
