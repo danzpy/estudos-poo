@@ -12,6 +12,10 @@ Pensa numa classe abstrata como um contrato:
 from abc import ABC, abstractmethod
 
 class Animal(ABC):
+
+    def respirar(self):
+        print("Respirando...")  # já tem lógica
+
     @abstractmethod
     def fazer_som(self):
         pass
